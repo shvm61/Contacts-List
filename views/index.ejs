@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="contacts">
+      <h2><i class="fas fa-address-book"></i>CONTACTS LIST</h2>
+      <ul class="list">
+        <% for(let i of contact_list) {%>
+        <li class="item">
+          <span><%= i.name %> </span>
+
+          <span
+            ><%= i.phone %>
+            <a class="link" href="/delete/?id=<%= i.id %>"
+              ><i class="far fa-times-circle"></i
+            ></a>
+          </span>
+        </li>
+        <% } %>
+        <!-- <li class="item">
+          <span>ram</span>
+
+          <span>1234567890<i class="far fa-times-circle"></i> </span>
+        </li>
+        <li class="item">
+          <span>ram</span>
+          <span>12 <i class="far fa-times-circle"></i> </span>
+        </li>
+        <li class="item">
+          <span>ram</span>
+          <span>12 <i class="far fa-times-circle"></i> </span>
+        </li> -->
+      </ul>
+      <form action="/create" method="POST">
+        <input type="text" name="name" />
+        <input type="text" name="phone" />
+        <button type="submit">Add</button>
+      </form>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/d063caab8f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
