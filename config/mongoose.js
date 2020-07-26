@@ -1,14 +1,12 @@
 //require the library
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 //connect to the database
-mongoose.connect(
-  "mongodb+srv://shvm:wyp73zSiWkaWXsKp@contactsdb.3dg9o.mongodb.net/contacts?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 //acquire the connection(to check if it's successful)
 const db = mongoose.connection;
