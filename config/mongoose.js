@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 //connect to the database
-mongoose.connect("mongodb://localhost/contacts", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/contacts", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

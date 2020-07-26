@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 const db = require("./config/mongoose");
 const Contact = require("./models/contact");
@@ -43,6 +43,10 @@ app.get("/delete", function (req, res) {
     return res.redirect("/");
   });
 });
+
+// if(process.env.NODE_ENV==='production'){
+
+// }
 app.listen(port, function (err) {
   if (err) {
     console.log("Error in running the server", err);
